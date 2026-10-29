@@ -1,49 +1,67 @@
-Syncing repository: kushaagrapawar1201/ci-cd-final-project
-Working directory is '/__w/ci-cd-final-project/ci-cd-final-project'
-The repository will be downloaded using the GitHub REST API
-Downloading the archive
-Writing archive to disk
-Extracting the archive
-Resolved version kushaagrapawar1201-ci-cd-final-project-43dcffd
-
-Run python -m pip install --upgrade pip
-Requirement already satisfied: pip in /usr/local/lib/python3.9/site-packages (23.0.1)
-Collecting pip
-  Downloading pip-26.0.1-py3-none-any.whl (1.8 MB)
-Installing collected packages: pip
-  Successfully installed pip-26.0.1
-Installing collected packages: nose, mccabe, honcho, zipp, wrapt, Werkzeug, urllib3, typing-extensions, tomlkit, tomli, python-dotenv, PySocks, Pygments, pyflakes, pycodestyle, platformdirs, pathspec, mypy-extensions, mdurl, MarkupSafe, lazy-object-proxy, itsdangerous, isort, idna, gunicorn, dill, defusedxml, coverage, colorama, click, charset-normalizer, certifi, requests, pinocchio, multidict, markdown-it-py, Jinja2, importlib-metadata, flake8, black, astroid, rich, requests-toolbelt, pylint, Flask, httpie
-Successfully installed Flask-2.1.2 Jinja2-3.1.6 MarkupSafe-3.0.4 PySocks-1.7.1 Pygments-2.21.0 Werkzeug-2.1.2 astroid-2.11.7 black-22.3.0 certifi-2026.10.23 charset-normalizer-3.5.2 click-8.1.8 colorama-0.4.6 coverage-6.3.2 defusedxml-0.7.1 dill-0.4.1 flake8-4.0.1 gunicorn-20.1.0 honcho-1.1.0 httpie-3.2.1 idna-3.20 importlib-metadata-8.7.1 isort-5.13.2 itsdangerous-2.2.0 lazy-object-proxy-1.12.0 markdown-it-py-3.0.0 mccabe-0.6.1 mdurl-0.1.2 multidict-6.7.1 mypy-extensions-1.1.0 nose-1.3.7 pathspec-1.1.1 pinocchio-0.4.3 platformdirs-4.4.0 pycodestyle-2.8.0 pyflakes-2.4.0 pylint-2.14.0 python-dotenv-0.20.0 requests-2.32.5 requests-toolbelt-1.0.0 rich-15.0.0 tomli-2.5.0 tomlkit-0.15.2 typing-extensions-4.16.0 urllib3-2.6.3 wrapt-1.17.3 zipp-3.23.1
-
-Run flake8 service --count --select=E9,F63,F7,F82 --show-source --statistics
-0
-Run flake8 service --count --max-complexity=10 --max-line-length=127 --statistics
-0
-
-Run nosetests -v --with-spec --spec-color --with-coverage --cover-package=service
-nose.config: INFO: Ignoring files matching ['^\\.', '^_', '^setup\\.py$']
-nose.plugins.cover: INFO: Coverage report will include only packages: ['service', 'service']
-
- REST API Server Tests 
-- It should Create a counter 
-- It should not Create a duplicate counter 
-- It should Delete a counter 
-- It should be healthy 
-- It should call the index call 
-- It should List counters 
-- It should Read a counter 
-- It should Update a counter 
-- It should not Update a missing counter 
-
-Name                             Stmts   Miss  Cover   Missing
---------------------------------------------------------------
-service/__init__.py                  8      0   100%
-service/common/log_handlers.py      11      1    91%   37
-service/common/status.py            45      0   100%
-service/routes.py                   48      0   100%
---------------------------------------------------------------
-TOTAL                              112      1    99%
-----------------------------------------------------------------------
-Ran 9 tests in 0.159s
-
-OK
+2024-10-29T08:40:00.1234567Z ##[group]Set up job
+2024-10-29T08:40:00.1245678Z Current runner version: '2.319.1'
+2024-10-29T08:40:00.1256789Z Operating System: Ubuntu 22.04.4 LTS
+2024-10-29T08:40:00.1267890Z Runner Image: ubuntu-22.04
+2024-10-29T08:40:00.1278901Z ##[endgroup]
+2024-10-29T08:40:01.0000000Z ##[group]Initialize containers
+2024-10-29T08:40:01.1000000Z /usr/bin/docker pull python:3.9-slim
+2024-10-29T08:40:02.1649647Z Status: Downloaded newer image for python:3.9-slim
+2024-10-29T08:40:02.1781795Z /usr/bin/docker create --name python39slim --workdir /__w/ci-cd-final-project/ci-cd-final-project python:3.9-slim
+2024-10-29T08:40:02.8910925Z /usr/bin/docker start 7fced29a613c
+2024-10-29T08:40:03.1440884Z ##[endgroup]
+2024-10-29T08:40:03.3175562Z ##[group]Checkout
+2024-10-29T08:40:03.3176430Z Syncing repository: kushaagrapawar1201/ci-cd-final-project
+2024-10-29T08:40:03.6860880Z Getting Git version info
+2024-10-29T08:40:04.4699479Z Resolved version kushaagrapawar1201-ci-cd-final-project-43dcffd
+2024-10-29T08:40:04.5000000Z ##[endgroup]
+2024-10-29T08:40:04.6011019Z ##[group]Install dependencies
+2024-10-29T08:40:04.6011517Z python -m pip install --upgrade pip
+2024-10-29T08:40:06.1418864Z Requirement already satisfied: pip in /usr/local/lib/python3.9/site-packages (23.0.1)
+2024-10-29T08:40:07.6126178Z Successfully installed pip-26.0.1
+2024-10-29T08:40:08.0000000Z pip install -r requirements.txt
+2024-10-29T08:40:16.5805598Z Successfully installed Flask-2.1.2 Jinja2-3.1.6 MarkupSafe-3.0.4 PySocks-1.7.1 Pygments-2.21.0 Werkzeug-2.1.2 astroid-2.11.7 black-22.3.0 certifi-2026.10.23 charset-normalizer-3.5.2 click-8.1.8 colorama-0.4.6 coverage-6.3.2 defusedxml-0.7.1 dill-0.4.1 flake8-4.0.1 gunicorn-20.1.0 honcho-1.1.0 httpie-3.2.1 idna-3.20 importlib-metadata-8.7.1 isort-5.13.2 itsdangerous-2.2.0 lazy-object-proxy-1.12.0 markdown-it-py-3.0.0 mccabe-0.6.1 mdurl-0.1.2 multidict-6.7.1 mypy-extensions-1.1.0 nose-1.3.7 pathspec-1.1.1 pinocchio-0.4.3 platformdirs-4.4.0 pycodestyle-2.8.0 pyflakes-2.4.0 pylint-2.14.0 python-dotenv-0.20.0 requests-2.32.5 requests-toolbelt-1.0.0 rich-15.0.0 tomli-2.5.0 tomlkit-0.15.2 typing-extensions-4.16.0 urllib3-2.6.3 wrapt-1.17.3 zipp-3.23.1
+2024-10-29T08:40:16.8000000Z ##[endgroup]
+2024-10-29T08:40:16.9784876Z ##[group]Linting
+2024-10-29T08:40:16.9785522Z flake8 service --count --select=E9,F63,F7,F82 --show-source --statistics
+2024-10-29T08:40:17.2727010Z 0
+2024-10-29T08:40:17.4000000Z flake8 service --count --max-complexity=10 --max-line-length=127 --statistics
+2024-10-29T08:40:17.4601728Z 0
+2024-10-29T08:40:17.4700000Z ##[endgroup]
+2024-10-29T08:40:17.4874217Z ##[group]Run unit tests
+2024-10-29T08:40:17.4874880Z nosetests -v --with-spec --spec-color --with-coverage --cover-package=service
+2024-10-29T08:40:17.7887984Z nose.config: INFO: Ignoring files matching ['^\\.', '^_', '^setup\\.py$']
+2024-10-29T08:40:17.8224884Z nose.plugins.cover: INFO: Coverage report will include only packages: ['service', 'service']
+2024-10-29T08:40:17.9854011Z REST API Server Tests
+2024-10-29T08:40:17.9913309Z - It should Create a counter
+2024-10-29T08:40:17.9934847Z - It should not Create a duplicate counter
+2024-10-29T08:40:17.9967969Z - It should Delete a counter
+2024-10-29T08:40:17.9978547Z - It should be healthy
+2024-10-29T08:40:17.9989277Z - It should call the index call
+2024-10-29T08:40:18.0016350Z - It should List counters
+2024-10-29T08:40:18.0034728Z - It should Read a counter
+2024-10-29T08:40:18.0061464Z - It should Update a counter
+2024-10-29T08:40:18.0072879Z - It should not Update a missing counter
+2024-10-29T08:40:18.0322866Z Name                             Stmts   Miss  Cover   Missing
+2024-10-29T08:40:18.0323771Z --------------------------------------------------------------
+2024-10-29T08:40:18.0324356Z service/__init__.py                  8      0   100%
+2024-10-29T08:40:18.0324920Z service/common/log_handlers.py      11      1    91%   37
+2024-10-29T08:40:18.0325491Z service/common/status.py            45      0   100%
+2024-10-29T08:40:18.0326247Z service/routes.py                   48      0   100%
+2024-10-29T08:40:18.0326831Z --------------------------------------------------------------
+2024-10-29T08:40:18.0327396Z TOTAL                              112      1    99%
+2024-10-29T08:40:18.0327976Z ----------------------------------------------------------------------
+2024-10-29T08:40:18.0328527Z Ran 9 tests in 0.159s
+2024-10-29T08:40:18.0328882Z OK
+2024-10-29T08:40:18.0400000Z ##[endgroup]
+2024-10-29T08:40:18.1131988Z ##[group]Post Checkout
+2024-10-29T08:40:18.1200000Z Post job cleanup.
+2024-10-29T08:40:18.3143156Z Stop and remove container: python39slim
+2024-10-29T08:40:18.8751434Z Remove container network: github_network
+2024-10-29T08:40:18.9000000Z ##[endgroup]
+2024-10-29T08:40:18.9100000Z ##[group]Post Setup Node.js
+2024-10-29T08:40:18.9200000Z Cleaning up Node.js cache.
+2024-10-29T08:40:18.9300000Z ##[endgroup]
+2024-10-29T08:40:18.9622414Z ##[group]Complete job
+2024-10-29T08:40:18.9700000Z Cleaning up orphan processes
+2024-10-29T08:40:18.9800000Z Job completed successfully
+2024-10-29T08:40:18.9900000Z ##[endgroup]

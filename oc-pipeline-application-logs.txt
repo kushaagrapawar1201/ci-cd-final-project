@@ -1,0 +1,12 @@
+[2024-10-29 08:42:15 +0000] [1] [INFO] Starting gunicorn 20.1.0
+[2024-10-29 08:42:15 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2024-10-29 08:42:15 +0000] [1] [INFO] Using worker: sync
+[2024-10-29 08:42:15 +0000] [7] [INFO] Booting worker with pid: 7
+[2024-10-29 08:42:16,104] INFO in __init__: ******************************************************************
+[2024-10-29 08:42:16,105] INFO in __init__:  S E R V I C E R U N N I N G
+[2024-10-29 08:42:16,105] INFO in __init__: ******************************************************************
+[2024-10-29 08:42:16,106] INFO in routes: Initializing routes and database connection...
+[2024-10-29 08:42:16,120] INFO in routes: Connected to database successfully on port 8000.
+10.128.2.1 - - [29/Oct/2024:08:42:30 +0000] "GET /health HTTP/1.1" 200 24 "-" "kube-probe/1.25"
+10.128.2.1 - - [29/Oct/2024:08:42:40 +0000] "GET / HTTP/1.1" 200 1485 "-" "Mozilla/5.0"
+10.128.2.1 - - [29/Oct/2024:08:42:45 +0000] "GET /health HTTP/1.1" 200 24 "-" "kube-probe/1.25"

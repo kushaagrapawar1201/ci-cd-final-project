@@ -1,11 +1,14 @@
-# CI/CD Final Project
+# ci-cd-final-project
 
 [![CI workflow](https://github.com/kushaagrapawar1201/ci-cd-final-project/actions/workflows/workflow.yml/badge.svg)](https://github.com/kushaagrapawar1201/ci-cd-final-project/actions/workflows/workflow.yml)
+
+## Project Name
+ci-cd-final-project
 
 This repository contains the application and CI/CD pipelines developed as part of the **IBM DevOps and Software Engineering: Continuous Integration and Continuous Delivery (CI/CD)** course on Coursera.
 
 ## Project Details
-- **Project Name:** CI/CD Final Project (Continuous Integration and Continuous Delivery)
+- **Project Name:** ci-cd-final-project
 - **Author:** Kushagra Pawar (`kushaagrapawar1201`)
 - **Course:** Continuous Integration and Continuous Delivery (CI/CD) - IBM DevOps Professional Certificate
 - **Stack:** Python 3.9, Flask, Gunicorn, Flake8, Nose, Docker, GitHub Actions, Tekton, Red Hat OpenShift
@@ -24,7 +27,7 @@ This repository contains the application and CI/CD pipelines developed as part o
    - **`flake8` Lint Task:** Enforces code quality and syntax integrity.
    - **`nose` Test Task:** Runs automated unit tests inside Tekton workspace.
    - **`buildah` Task:** Builds container image and pushes to OpenShift internal image registry.
-   - **`deploy` Task:** Deploys application onto Red Hat OpenShift cluster.
+   - **`openshift-client` / `deploy` Task:** Deploys application onto Red Hat OpenShift cluster.
 
 ## Running Tests Locally
 ```bash
